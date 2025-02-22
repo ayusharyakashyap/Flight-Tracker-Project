@@ -7,13 +7,15 @@ This project allows you to fetch real-time flight status using the **AviationSta
 - Fetches flight details using the **AviationStack API**.
 - Displays information in a structured, aesthetic format using **Rich** and **Tabulate**.
 - Retrieves **live tracking data** (altitude, speed, latitude, longitude) if available.
+- Lists active flights with live tracking data.
 - User-friendly input for flight search.
 
 ## 📂 Repository Structure
 
-- `` - Jupyter Notebook containing the implementation and testing.
-- `` - Python script for fetching and displaying flight status.
-- `` - Project documentation.
+- `Live.py` - Displays a list of currently active flights with live tracking data.
+- `Tracker.py` - Fetches and displays detailed flight tracking data.
+- `Tracker.ipynb` - Jupyter Notebook containing the implementation and testing.
+- `README.md` - Project documentation.
 
 ## 🛠 Installation
 
@@ -33,7 +35,7 @@ pip install requests rich tabulate
 
 ## 🔑 API Key Setup
 
-The script uses **AviationStack API** to fetch flight data. Replace the placeholder API key in `flight_status.py` with your own:
+The script uses **AviationStack API** to fetch flight data. Replace the placeholder API key in `Live.py` and `Tracker.py` with your own:
 
 ```python
 API_KEY = "your_api_key_here"
@@ -41,10 +43,20 @@ API_KEY = "your_api_key_here"
 
 ## 🚀 Usage
 
-Run the script and enter a **flight number (IATA Code)** when prompted:
+### 1️⃣ Fetch Active Flights
+
+To list currently active flights with live tracking data:
 
 ```sh
-python flight_status.py
+python Live.py
+```
+
+### 2️⃣ Track a Specific Flight
+
+Run the script and enter a **flight number (IATA Code, no spaces)** when prompted:
+
+```sh
+python Tracker.py
 ```
 
 or execute the notebook file in Jupyter.
@@ -75,6 +87,7 @@ Longitude   | 77.1025
 
 - If no flight is found, the program notifies the user.
 - If **live tracking** is unavailable, an appropriate message is displayed.
+- Ensure your API key is valid and has access to real-time flight data.
 
 ## 🔗 API Reference
 
@@ -87,4 +100,3 @@ This project is open-source under the **MIT License**.
 ---
 
 Feel free to customize the README with your **GitHub repo link** and **your API key details** (if necessary). 🚀
-
